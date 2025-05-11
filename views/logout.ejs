@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>You have successfully logged out</h1>
+    <form action="/login" method="POST">
+        <center><button type="submit" class="btn btn-danger" ><p class="text-white">Login</p></button></center>
+    </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            var alertList = document.querySelectorAll('.alert')
+            alertList.forEach(function (alert) {
+            new bootstrap.Alert(alert)
+            })
+        </script>
+</body>
+</html>

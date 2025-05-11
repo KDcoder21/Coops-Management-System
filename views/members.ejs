@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="styles.css">
+    <!--Semantic-UI CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+    <title>Add New Member</title>
+  </head>
+  <body>
+     <!--Vertical Navbar-->
+  <div class="vertical-nav bg-white" id="sidebar">
+    <div class="py-4 px-3 mb-4" style="background: linear-gradient(to top, #1976D2 0%, #FF5722 68%);">
+      <div class="media d-flex align-items-center"><img src="admin.svg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+        &emsp;<div class="media-body">
+          <h4 class="m-0"><p class="text-white"><shop-name></h4>
+          <p class="font-weight-light text-white mb-0">(Admin)</p>
+        </div>
+      </div>
+    </div>
+    <form action="/logout" method="get">
+      <center><button type="submit" class="btn btn-danger" ><p class="text-white">Log Out</p></button></center>
+    </form>
+    <h5 class="ui horizontal divider header text-primary">
+      MAIN
+    </h5>
+  
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="/" class="nav-link text-dark font-italic">
+                  <i class="home icon"></i>
+                  Dashboard
+                
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="/viewstocks" class="nav-link text-dark font-italic">
+          <i class="tags icon"></i>
+          View Product Info
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="/stocks" class="nav-link text-dark font-italic">
+          <i class="plus circle icon"></i>
+                  Add Stock
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="/viewemployees" class="nav-link text-dark font-italic">
+          <i class="plus circle icon"></i>
+                  View Employees
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="/employees" class="nav-link text-dark font-italic">
+          <i class="plus circle icon"></i>
+                  Add Employee
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="/viewsuppliers" class="nav-link text-dark font-italic">
+          <i class="plus circle icon"></i>
+                  View Suppliers
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="/suppliers" class="nav-link text-dark font-italic">
+          <i class="plus circle icon"></i>
+                  Add Supplier
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="/supplied" class="nav-link text-dark font-italic">
+        <i class="plus circle icon"></i>
+                Add Supplied 
+            </a>
+    </li>
+      <li class="nav-item">
+        <a href="/viewsupplied" class="nav-link text-dark font-italic">
+        <i class="plus circle icon"></i>
+                View Supplied 
+            </a>
+    </li>
+    <li class="nav-item">
+        <a href="/viewmembers" class="nav-link text-dark font-italic">
+        <i class="plus circle icon"></i>
+                View Members 
+            </a>
+    </li>
+    <li class="nav-item">
+        <a href="/members" class="nav-link text-dark font-italic" style="background: linear-gradient(to right, #1976D2 0%, #FF5722 68%);">
+          <p class="text-white"><i class="plus circle icon"></i>
+                  Add Members
+                  </p>
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="/reorder" class="nav-link text-dark font-italic">
+        <i class="plus circle icon"></i>
+                Check Reorder 
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/viewsug" class="nav-link text-dark font-italic">
+      <i class="plus circle icon"></i>
+              View Suggestions
+          </a>
+  </li>
+    </ul>
+  
+    
+  </div>
+  <!-- End vertical navbar -->
+  
+     <!-- Page content holder -->
+  <div class="page-content p-5" id="content" style="background: linear-gradient(to right,#FFFFFF 47%, #F5F5F5 100%);">
+    <!-- Toggle button -->
+    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="align justify icon"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
+  
+    <!-- Page content -->
+    
+    <h1>Add New Member</h1>
+    <br>
+    <center><img class="ui medium rounded image" src="member.png"></center>
+    <br>
+    <div class="ui fluid container">
+    <form action="/submitmember" method="POST">
+    <table class="ui inverted pink celled table tbl_code_with_mark" id="myTable">
+      <thead>
+        <tr style="background: linear-gradient(to left, #1976D2 0%, #FF5722 68%);">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>Phone No</th>
+            <th>Email</th>
+            <th>Mem Type</th>
+            <th>Mem Status</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        
+        <tr>
+
+        <td class="table-primary">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="FName" name="FName" required>
+            <label for="floatingInput"></label>
+          </div>
+        </td>
+
+        <td class="table-primary">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="LName" name="LName" required>
+              <label for="floatingInput"></label>
+            </div>
+          </td>
+
+          <td class="table-primary">
+            <div class="form-floating">
+              <input type="date" class="form-control" id="dob" name="dob" required>
+              <label for="floatingInput"></label>
+            </div>
+          </td>
+
+          <td class="table-success">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="Address" placeholder="Enter Address" id="Address" required>
+              <label for="floatingInput"></label>
+            </div>
+          </td>
+          <td class="table-success">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="ph_no" value=XXXXXXXXXX id="ph_no" required>
+              <label for="floatingInput"></label>
+            </div>
+          </td>
+        <td class="table-success">
+          <div class="form-floating">
+            <input type="text" class="form-control" name="Email" placeholder="Enter Email" value=supp@gmail.com id="Email" required>
+            <label for="floatingInput"></label>
+          </div>
+        </td>
+        <td class="table-success">
+          <div class="form-floating">
+            <input type="text" class="form-control" name="mem_type"   id="mem_type" required>
+            <label for="floatingInput"></label>
+          </div>
+        </td>
+        <td class="table-success">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="mem_status"   id="mem_status" required>
+              <label for="floatingInput"></label>
+            </div>
+          </td>
+        </tr>
+    
+        </tbody>
+        
+    
+        </table>
+        <center><button type="submit" class="ui teal submit button">Submit</button></center>
+    </form>
+
+    </div>
+    
+  </div>
+  <div class="page-content p-5" id="content" style="background: linear-gradient(to right,#FFFFFF 47%, #F5F5F5 100%);
+  ">
+  </div>
+  <div class="page-content p-5" id="content" style="background: linear-gradient(to right,#FFFFFF 47%, #F5F5F5 100%);
+  "></div>
+   
+    <!-- Semnatic-UI Scripts -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+
+    <script>
+      $(document).ready(function($)
+      {
+        //--->add row at the end > start
+        $(document).on('click',".btn_row_add_below_end", function(e)
+        {
+          var tableBody = $(document).find('.tbl_code_with_mark').find("tbody");
+          var trLast = tableBody.find("tr:last");
+          var trNew = trLast.clone();
+          var x = document.getElementById('myTable');
+          var len = x.rows.length;
+          console.log(`No. of rows = ${len}`)
+          trLast.after(trNew);
+          var inputs = document.getElementsByTagName("input");
+          var flag1=flag2=1;
+          for (var i = 0; i < inputs.length; i++) {
+            inputs[i].id = (inputs[i].id).replace(/\d+/g, '')
+            inputs[i].name = (inputs[i].name).replace(/\d+/g, '')
+            inputs[i].id = inputs[i].id + (flag1).toString();
+            inputs[i].name = inputs[i].name + (flag1).toString();
+            if(flag2%4==0)
+            {
+              flag1++;
+            }
+            flag2++;
+          }
+          var count = 0
+          for (var i = 0; i < inputs.length; i++) {
+            if((inputs[i].id).includes("number")){
+              inputs[i].value = count + 1
+              count++;
+            }
+          }
+          for (var i = 0; i < inputs.length; i++) {
+            if((inputs[i].id).includes(len.toString()) && !((inputs[i].id).includes("number")) ){
+              inputs[i].value = ""
+              inputs[i].innerText = ""
+            }
+          }
+          console.log(inputs);
+          console.log("21");
+        
+        });
+      });
+    </script>
+    <script>
+      $(function() {
+    // Sidebar toggle behavior
+    $('#sidebarCollapse').on('click', function() {
+      $('#sidebar, #content').toggleClass('active');
+    });
+  });
+  
+    </script>
+  </body>
+</html>
